@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think-X </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+        }
+        header img{
+            width: 5%;
+            border-radius: 10px;
+            margin-right: 30px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background: #0056b3;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .section {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .services-list, .technologies-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .service, .technology {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1s ease-in-out;
+        }
+        .service.visible, .technology.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        marquee {
+            color: #fff;
+            font-size: 18px;
+            padding: 10px;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .section, .service, .technology {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+        }
+        .section.visible {
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+        .service.visible {
+            animation: fadeInLeft 1s ease-in-out forwards;
+        }
+        .technology.visible {
+            animation: fadeInRight 1s ease-in-out forwards;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .services-list, .technologies-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service, .technology {
+                width: 90%;
+            }
+            header {
+                padding: 15px;
+            }
+            .cta-button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_x.png" alt="">
+        <h1>Think-X</h1>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h1>We Are Not Only Developers!</h1>
+            <p>We focus on innovative solutions, fast-paced development, and scaling products quickly to address market gaps.</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </section>
+        <section class="section">
+            <h2>Customer First Services</h2>
+            <div class="services-list">
+                <div class="service">
+                    <h3>Innovative Solutions</h3>
+                    <p>We offer fresh, creative products/services designed to address specific pain points in the market.</p>
+                </div>
+                <div class="service">
+                    <h3>Service Efficiency</h3>
+                    <p>Providing streamlined and effective solutions to meet business needs.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2>Our Services</h2>
+            <div class="services-list">
+                <div class="service">
+                    <h3>🌐 Web Development</h3>
+                    <p>We build high-performance, scalable websites using React, Next.js, and modern web technologies.</p>
+                </div>
+                <div class="service">
+                    <h3>📱 Mobile App Development</h3>
+                    <p>Creating seamless and intuitive mobile experiences for iOS and Android using React Native & Flutter.</p>
+                </div>
+                <div class="service">
+                    <h3>🖥️ PC Setup & Maintenance</h3>
+                    <p>Providing expert PC assembly, troubleshooting, and performance optimization services.</p>
+                </div>
+                <div class="service">
+                    <h3>🤖 AI & Automation</h3>
+                    <p>Enhance your business with AI-driven chatbots, automation tools, and intelligent data processing.</p>
+                </div>
+                <div class="service">
+                    <h3>📈 Digital Marketing</h3>
+                    <p>Boost your brand’s presence with SEO, social media marketing, and performance-driven advertising.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2>Our Technologies</h2>
+            <div class="technologies-list">
+                <div class="technology">
+                    <h3>🌐 Web Development</h3>
+                    <p>React.js, Next.js, Angular, Vue.js, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="technology">
+                    <h3>📱 Mobile App Development</h3>
+                    <p>React Native, Flutter, Swift, Kotlin</p>
+                </div>
+                <div class="technology">
+                    <h3>☁️ Cloud & DevOps</h3>
+                    <p>AWS, Azure, Google Cloud, Docker, Kubernetes, CI/CD</p>
+                </div>
+                <div class="technology">
+                    <h3>🤖 AI & Machine Learning</h3>
+                    <p>Python, TensorFlow, OpenAI, NLP, Chatbots</p>
+                </div>
+                <div class="technology">
+                    <h3>📊 Database & Backend</h3>
+                    <p>Node.js, Express, Django, PostgreSQL, MongoDB, Firebase</p>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have a project in mind? Let's work together to build something amazing!</p>
+            <p>Email: contact@buildwityh.com</p>
+            <p>Phone: +91 9040932842</p>
+            <p>Address: 123 Build With Street, Mdu City</p>
+        </section>
+    </div>
+    <footer>
+        <marquee>Think-X IT Solutions - Innovate | Build | Scale</marquee>
+        <p>&copy; 2025 Think-X IT Solutions. All Rights Reserved.</p>
+        <marquee behavior="" direction="">Developed by <a href="" style="color: white; text-decoration:none;">Dineshbabu</a></marquee>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll(".section, .service, .technology");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
